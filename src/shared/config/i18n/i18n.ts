@@ -7,12 +7,11 @@ import LanguageDetector from 'i18next-browser-languagedetector';
 // have a look at the Quick start guide
 // for passing in lng and translations on init
 
-i18n
-    .use(Backend)
+i18n.use(Backend)
     .use(LanguageDetector)
     .use(initReactI18next)
-// init i18next
-// for all options read: https://www.i18next.com/overview/configuration-options
+    // init i18next
+    // for all options read: https://www.i18next.com/overview/configuration-options
     .init({
         fallbackLng: 'en',
         debug: __IS_DEV__,

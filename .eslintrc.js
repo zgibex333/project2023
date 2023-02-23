@@ -8,6 +8,7 @@ module.exports = {
         'plugin:react/recommended',
         'airbnb',
         'plugin:i18next/recommended',
+        'prettier',
     ],
     parser: '@typescript-eslint/parser',
     overrides: [],
@@ -18,8 +19,9 @@ module.exports = {
         ecmaVersion: 'latest',
         sourceType: 'module',
     },
-    plugins: ['react', 'i18next', '@typescript-eslint'],
+    plugins: ['react', 'i18next', '@typescript-eslint', 'prettier'],
     rules: {
+        'prettier/prettier': ['error'],
         'react/jsx-indent': [2, 4],
         'react/jsx-indent-props': [2, 4],
         indent: [2, 4],

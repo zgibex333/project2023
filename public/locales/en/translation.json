@@ -1,5 +1,9 @@
 {
     "Главная страница": "Main Page",
     "Язык": "English",
-    "Страница не найдена": "Page not found"
+    "Страница не найдена": "Page not found",
+    "Произошла непредвиденная ошибка": "Unexpected error has occured",
+    "Обновить страницу": "Refresh page",
+    "Выбросить ошибку": "Throw error",
+    "Переключить": "Toggle"
 }
