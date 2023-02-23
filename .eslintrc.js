@@ -11,7 +11,6 @@ module.exports = {
         'prettier',
     ],
     parser: '@typescript-eslint/parser',
-    overrides: [],
     parserOptions: {
         ecmaFeatures: {
             jsx: true,
@@ -41,7 +40,10 @@ module.exports = {
         'import/no-extraneous-dependencies': 'off',
         'no-underscore-dangle': 'off',
         'object-curly-newline': 'off',
-        'i18next/no-literal-string': ['error', { markupOnly: true }],
+        'i18next/no-literal-string': [
+            'error',
+            { markupOnly: true, ignoreAttribute: ['data-testid'] },
+        ],
         'max-len': [
             'error',
             {
@@ -52,4 +54,12 @@ module.exports = {
     globals: {
         __IS_DEV__: true,
     },
+    overrides: [
+        {
+            files: ['**/src/**/*.test.{ts,tsx}'],
+            rules: {
+                'i18next/no-literal-string': 'off',
+            },
+        },
+    ],
 };
