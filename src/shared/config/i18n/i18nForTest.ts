@@ -11,7 +11,7 @@ i18n.use(initReactI18next).init({
         escapeValue: false, // not needed for react!!
     },
 
-    resources: { ru: { translationsNS: {} } },
+    resources: { ru: { translations: {} } },
 });
 
 export default i18n;

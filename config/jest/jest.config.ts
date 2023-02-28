@@ -20,7 +20,7 @@ export default {
     rootDir: '../../',
     // The glob patterns Jest uses to detect test files
     testMatch: ['<rootDir>src/**/*(*.)@(spec|test).[tj]s?(x)'],
-    setupFilesAfterEnv: ['<rootDir>config/jest/setupTests.ts'],
+    setupFilesAfterEnv: ['<rootDir>/config/jest/setupTests.ts'],
     moduleNameMapper: {
         '\\.(s?css)$': 'identity-obj-proxy',
         '\\.svg': path.resolve(__dirname, 'jestEmptyComponent.tsx'),
