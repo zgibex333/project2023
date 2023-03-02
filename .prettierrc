@@ -2,6 +2,14 @@
     "semi": true,
     "trailingComma": "all",
     "singleQuote": true,
+    "overrides": [
+        {
+            "files": ["**/*.css", "**/*.scss", "**/*.html"],
+            "options": {
+                "singleQuote": false
+            }
+        }
+    ],
     "printWidth": 80,
     "tabWidth": 4,
     "useTabs": false
