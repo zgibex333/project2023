@@ -9,6 +9,7 @@ import { ThemeSwitcher } from 'widgets/ThemeSwitcher';
 import AboutIcon from 'shared/assets/icons/about-20-20.svg';
 import HomeIcon from 'shared/assets/icons/home-20-20.svg';
 import cls from './Sidebar.module.scss';
+
 interface SidebarProps {
     className?: string;
 }
