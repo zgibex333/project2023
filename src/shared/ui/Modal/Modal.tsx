@@ -22,7 +22,6 @@ const ANIMATION_DELAY = 100;
 const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
-    const { theme } = useTheme();
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -64,7 +63,7 @@ const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
 
     return (
         <Portal>
-            <div className={classNames(cls.Modal, mods, [className, theme])}>
+            <div className={classNames(cls.Modal, mods, [className])}>
                 <div className={cls.overlay} onClick={closeHandler}>
                     <div className={cls.content} onClick={onContentClick}>
                         {children}

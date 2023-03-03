@@ -8,7 +8,7 @@ import { Suspense } from 'react';
 export const App = () => {
     const { theme } = useTheme();
     return (
-        <div id="app" className={classNames('app', {}, [theme])}>
+        <div id="app" className={classNames('app')}>
             <Suspense fallback="">
                 <Navbar />
                 <div className="content-page">
