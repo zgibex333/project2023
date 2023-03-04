@@ -10,5 +10,8 @@
     "Войти": "Enter",
     "О нас": "About us",
     "Введите username": "Enter username",
-    "Введите пароль": "Enter password"
+    "Введите пароль": "Enter password",
+    "Форма авторизации": "Authorization Form",
+    "Вы ввели неверный логин или пароль": "Incorrect login or password",
+    "Выйти": "Logout"
 }

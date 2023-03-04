@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import LoginForm from './LoginForm';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
@@ -22,7 +23,43 @@ const Template: ComponentStory<typeof LoginForm> = (args) => (
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {};
-
+Primary.decorators = [
+    StoreDecorator({
+        loginForm: {
+            password: '123',
+            username: 'User',
+        },
+    }),
+];
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [
+    StoreDecorator({
+        loginForm: {
+            password: '123',
+            username: 'User',
+        },
+    }),
+];
+export const WithError = Template.bind({});
+WithError.args = {};
+WithError.decorators = [
+    StoreDecorator({
+        loginForm: {
+            password: '123',
+            username: 'User',
+            error: 'Error',
+        },
+    }),
+];
+export const isLoading = Template.bind({});
+isLoading.args = {};
+isLoading.decorators = [
+    StoreDecorator({
+        loginForm: {
+            password: '123',
+            username: 'User',
+            isLoading: true,
+        },
+    }),
+];
