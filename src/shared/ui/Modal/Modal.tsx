@@ -22,8 +22,10 @@ const ANIMATION_DELAY = 100;
 
 const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
+    const [isOpening, setIsOpening] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
+    const timeRef2 = useRef<ReturnType<typeof setTimeout>>();
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -49,7 +51,7 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     );
 
     const mods: Record<string, boolean> = {
-        [cls.opened]: isOpen,
+        [cls.opened]: isOpening,
         [cls.isClosing]: isClosing,
     };
 
@@ -66,7 +68,14 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     useEffect(() => {
         if (isOpen) {
             setIsMounted(true);
+            timeRef2.current = setTimeout(() => {
+                setIsOpening(true);
+            });
         }
+        return () => {
+            clearTimeout(timeRef2.current);
+            setIsOpening(false);
+        };
     }, [isOpen]);
 
     if (lazy && !isMounted) {
