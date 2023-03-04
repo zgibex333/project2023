@@ -15,12 +15,14 @@ interface ModalProps {
     children: React.ReactNode;
     isOpen?: boolean;
     onClose?: () => void;
+    lazy?: boolean;
 }
 
 const ANIMATION_DELAY = 100;
 
-const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
+const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
+    const [isMounted, setIsMounted] = useState(false);
     const timeRef = useRef<ReturnType<typeof setTimeout>>();
 
     const closeHandler = useCallback(() => {
@@ -60,6 +62,16 @@ const Modal = ({ className, children, isOpen, onClose }: ModalProps) => {
             clearTimeout(timeRef.current);
         };
     }, [isOpen, onKeyDown]);
+
+    useEffect(() => {
+        if (isOpen) {
+            setIsMounted(true);
+        }
+    }, [isOpen]);
+
+    if (lazy && !isMounted) {
+        return null;
+    }
 
     return (
         <Portal>

@@ -8,5 +8,7 @@
     "Переключить": "Toggle",
     "Короткий язык": "EN",
     "Войти": "Enter",
-    "О нас": "About us"
+    "О нас": "About us",
+    "Введите username": "Enter username",
+    "Введите пароль": "Enter password"
 }
