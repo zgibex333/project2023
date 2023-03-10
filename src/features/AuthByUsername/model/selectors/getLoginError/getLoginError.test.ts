@@ -1,4 +1,3 @@
-import { DeepPartial } from '@reduxjs/toolkit';
 import { StateSchema } from 'app/providers/storeProvider';
 import { getLoginError } from './getLoginError';
 
@@ -12,6 +11,6 @@ describe('getLoginError.test', () => {
         expect(getLoginError(state as StateSchema)).toEqual('error');
     });
     test('should work with empty state', () => {
-        expect(getLoginError(undefined)).toEqual('');
+        expect(getLoginError({} as StateSchema)).toEqual('');
     });
 });

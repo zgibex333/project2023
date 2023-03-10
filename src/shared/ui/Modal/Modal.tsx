@@ -1,12 +1,12 @@
-import { useTheme } from 'app/providers/ThemeProvider';
 import React, {
     MouseEvent,
     useEffect,
     useRef,
     useState,
     useCallback,
+    MutableRefObject,
 } from 'react';
-import { classNames } from 'shared/lib/classNames/classNames';
+import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import Portal from 'shared/ui/Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -24,8 +24,12 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     const [isClosing, setIsClosing] = useState(false);
     const [isOpening, setIsOpening] = useState(false);
     const [isMounted, setIsMounted] = useState(false);
-    const timeRef = useRef<ReturnType<typeof setTimeout>>();
-    const timeRef2 = useRef<ReturnType<typeof setTimeout>>();
+    const timeRef = useRef<ReturnType<typeof setTimeout> | null>(
+        null,
+    ) as MutableRefObject<ReturnType<typeof setTimeout>>;
+    const timeRef2 = useRef<ReturnType<typeof setTimeout> | null>(
+        null,
+    ) as MutableRefObject<ReturnType<typeof setTimeout>>;
 
     const closeHandler = useCallback(() => {
         if (onClose) {
@@ -50,7 +54,7 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
         [closeHandler],
     );
 
-    const mods: Record<string, boolean> = {
+    const mods: Mods = {
         [cls.opened]: isOpening,
         [cls.isClosing]: isClosing,
     };
