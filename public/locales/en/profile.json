@@ -6,5 +6,10 @@
     "Произошла ошибка при загрузке профиля": "Error occured while loading profile",
     "Попробуйте обновить страницу": "Try to reload page",
     "Ваш возраст": "Your age",
-    "Ваш город": "Your city"
+    "Ваш город": "Your city",
+    "Серверная ошибка при сохранении": "Error while saving data",
+    "Некорректный регион": "Incorrect region",
+    "Некорректный возраст": "Incorrect age",
+    "Некорректные фамилия и имя": "Incorrect name or surname",
+    "Данные не указаны": "No data was provided"
 }
