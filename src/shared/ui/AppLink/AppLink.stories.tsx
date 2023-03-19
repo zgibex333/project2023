@@ -5,7 +5,7 @@ import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDeco
 import AppLink, { AppLinkTheme } from './AppLink';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'widget/AppLink',
+    title: 'shared/AppLink',
     component: AppLink,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
