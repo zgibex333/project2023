@@ -9,7 +9,7 @@ import { ReducersList } from 'shared/lib/components/DynamicModuleLoader/DynamicM
 const defaultAsyncReducers: ReducersList = {
     loginForm: loginReducer,
     profile: profileReducer,
-    articleDetails: articleDetailsReducer
+    articleDetails: articleDetailsReducer,
 };
 
 export const StoreDecorator =
