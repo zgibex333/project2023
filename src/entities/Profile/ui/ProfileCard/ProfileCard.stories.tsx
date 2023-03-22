@@ -8,7 +8,7 @@ import Avatar from 'shared/assets/tests/avatar-test.jpg';
 import ProfileCard from './ProfileCard';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'enities/ProfileCard',
+    title: 'entities/ProfileCard',
     component: ProfileCard,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

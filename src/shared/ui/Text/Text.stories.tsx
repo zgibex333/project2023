@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 
 import { Theme } from 'app/providers/ThemeProvider';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
-import Text, { TextTheme } from './Text';
+import Text, { TextSize, TextTheme } from './Text';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
     title: 'shared/Text',
@@ -28,8 +28,16 @@ SimpleTitle.args = {
     title: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
 };
 
-export const BothTitleAndText = Template.bind({});
-BothTitleAndText.args = {
+export const BothTitleAndTextSizeM = Template.bind({});
+BothTitleAndTextSizeM.args = {
+    size: TextSize.M,
+    title: 'It is a long ',
+    text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
+};
+
+export const BothTitleAndTextSizeL = Template.bind({});
+BothTitleAndTextSizeL.args = {
+    size: TextSize.L,
     title: 'It is a long ',
     text: "It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English.",
 };

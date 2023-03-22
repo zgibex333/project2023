@@ -1,26 +1,8 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import {
-    Article,
-    ArticleBlockType,
-    ArticleType,
-} from 'entities/Article/model/types/article';
-import ArticleDetailsPage from './ArticleDetailsPage';
-
-export default {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ArticleDetailsPage>;
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
-    <ArticleDetailsPage {...args} />
-);
+import { Country } from 'entities/Country';
+import { Currency } from 'entities/Currency';
+import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { Article, ArticleBlockType, ArticleType } from '../../types/article';
+import { fetchArticleById } from './fetchArticleById';
 
 const ArticleExample: Article = {
     id: '1',
@@ -92,13 +74,29 @@ const ArticleExample: Article = {
     ],
 };
 
-export const Basic = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Basic.args = {};
-Basic.decorators = [
-    StoreDecorator({
-        articleDetails: {
-            data: ArticleExample,
-        },
-    }),
-];
+describe('fetchArticleById.test', () => {
+    it('success', async () => {
+        const thunk = new TestAsyncThunk(fetchArticleById);
+        thunk.api.get.mockReturnValue(
+            Promise.resolve({
+                data: ArticleExample,
+            }),
+        );
+        const result = await thunk.callThunk('1');
+
+        expect(thunk.api.get).toHaveBeenCalled();
+        expect(result.meta.requestStatus).toBe('fulfilled');
+        expect(result.payload).toEqual(ArticleExample);
+    });
+    test('should reject with error response', async () => {
+        const thunk = new TestAsyncThunk(fetchArticleById);
+        thunk.api.get.mockReturnValue(
+            Promise.resolve({
+                status: 403,
+            }),
+        );
+        const result = await thunk.callThunk('1');
+
+        expect(result.meta.requestStatus).toBe('rejected');
+    });
+});

@@ -1,26 +1,7 @@
-import React from 'react';
-import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
-import {
-    Article,
-    ArticleBlockType,
-    ArticleType,
-} from 'entities/Article/model/types/article';
-import ArticleDetailsPage from './ArticleDetailsPage';
-
-export default {
-    title: 'pages/ArticleDetailsPage',
-    component: ArticleDetailsPage,
-    // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
-    argTypes: {
-        backgroundColor: { control: 'color' },
-    },
-} as ComponentMeta<typeof ArticleDetailsPage>;
-
-// More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof ArticleDetailsPage> = (args) => (
-    <ArticleDetailsPage {...args} />
-);
+import { fetchArticleById } from '../services/fetchArticleById/fetchArticleById';
+import { Article, ArticleBlockType, ArticleType } from '../types/article';
+import { ArticleDetailsSchema } from '../types/articleDetailsSchema';
+import { articleDetailsReducer } from './articleDetailsSlice';
 
 const ArticleExample: Article = {
     id: '1',
@@ -91,14 +72,57 @@ const ArticleExample: Article = {
         },
     ],
 };
-
-export const Basic = Template.bind({});
-// More on args: https://storybook.js.org/docs/react/writing-stories/args
-Basic.args = {};
-Basic.decorators = [
-    StoreDecorator({
-        articleDetails: {
+describe('profileSlice.test', () => {
+    test('test fetch article by id service pending', () => {
+        const state: DeepPartial<ArticleDetailsSchema> = {
+            isLoading: false,
+            error: undefined,
+        };
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.pending,
+            ),
+        ).toEqual({
+            isLoading: true,
+            error: undefined,
+        });
+    });
+    test('test  fetch article by id service fulfilled', () => {
+        const state: DeepPartial<ArticleDetailsSchema> = {
+            isLoading: false,
+            error: undefined,
+        };
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.fulfilled(ArticleExample, '', '1'),
+            ),
+        ).toEqual({
+            isLoading: false,
+            error: undefined,
             data: ArticleExample,
-        },
-    }),
-];
+        });
+    });
+    test('test  fetch article by id service rejectes', () => {
+        const state: DeepPartial<ArticleDetailsSchema> = {
+            isLoading: false,
+            error: undefined,
+        };
+        expect(
+            articleDetailsReducer(
+                state as ArticleDetailsSchema,
+                fetchArticleById.rejected(
+                    null,
+                    'i dont understnand this arg',
+                    'i dont understnand this arg',
+                    'error',
+                ),
+            ),
+        ).toEqual({
+            isLoading: false,
+            error: 'error',
+            data: undefined,
+        });
+    });
+});
