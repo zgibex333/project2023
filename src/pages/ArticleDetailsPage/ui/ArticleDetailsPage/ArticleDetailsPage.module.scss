@@ -1,3 +1,7 @@
 .ArticleDetailsPage {
-    top: 100; // remove it later, just for linter
+    min-height: 100%;
+}
+
+.commentTitle {
+    margin-top: 20px;
 }
