@@ -33,6 +33,7 @@ Primary.args = {
         city: 'Warszawa',
         country: Country.Poland,
         currency: Currency.EUR,
+        id: '1',
     },
 };
 

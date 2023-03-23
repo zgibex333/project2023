@@ -13,6 +13,7 @@ const profileData = {
     city: 'Warszawa',
     country: Country.Poland,
     currency: Currency.EUR,
+    id: '1',
 };
 
 describe('updateProfileData.test', () => {
