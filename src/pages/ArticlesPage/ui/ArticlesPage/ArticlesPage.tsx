@@ -1,3 +1,4 @@
+import { Article, ArticleList, ArticleView } from 'entities/Article';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from 'shared/lib/classNames/classNames';
@@ -12,7 +13,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
     const { t } = useTranslation('article');
     return (
         <div className={classNames(cls.ArticlesPage, {}, [className])}>
-            <span>1*1</span>
+            <ArticleList isLoading view={ArticleView.GRID} articles={[]} />
         </div>
     );
 };

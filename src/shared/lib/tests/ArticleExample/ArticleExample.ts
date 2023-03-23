@@ -1,10 +1,11 @@
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
-import { Article, ArticleBlockType, ArticleType } from '../../types/article';
-import { fetchArticleById } from './fetchArticleById';
+/* eslint-disable max-len */
+import {
+    Article,
+    ArticleBlockType,
+    ArticleType,
+} from 'entities/Article/model/types/article';
 
-const ArticleExample: Article = {
+export const ArticleExample: Article = {
     id: '1',
     title: 'Javascript news',
     subtitle: 'Что нового в JS за 2022 год?',
@@ -77,30 +78,3 @@ const ArticleExample: Article = {
         },
     ],
 };
-
-describe('fetchArticleById.test', () => {
-    it('success', async () => {
-        const thunk = new TestAsyncThunk(fetchArticleById);
-        thunk.api.get.mockReturnValue(
-            Promise.resolve({
-                data: ArticleExample,
-            }),
-        );
-        const result = await thunk.callThunk('1');
-
-        expect(thunk.api.get).toHaveBeenCalled();
-        expect(result.meta.requestStatus).toBe('fulfilled');
-        expect(result.payload).toEqual(ArticleExample);
-    });
-    test('should reject with error response', async () => {
-        const thunk = new TestAsyncThunk(fetchArticleById);
-        thunk.api.get.mockReturnValue(
-            Promise.resolve({
-                status: 403,
-            }),
-        );
-        const result = await thunk.callThunk('1');
-
-        expect(result.meta.requestStatus).toBe('rejected');
-    });
-});

@@ -30,6 +30,10 @@ const ArticleExample: Article = {
     views: 1022,
     createdAt: '26.02.2022',
     type: [ArticleType.IT],
+    user: {
+        id: '1',
+        username: 'userName33',
+    },
     blocks: [
         {
             id: '1',
