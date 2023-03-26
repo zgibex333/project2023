@@ -14,6 +14,7 @@ import Text from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/addComentForm';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
+import { Page } from 'shared/ui/Page/Page';
 import { fetchCommentsByArticleId } from '../../model/services/fetchCommentsByArticleId/fetchCommentsByArticleId';
 import { getArticleCommentsIsLoading } from '../../model/selectors/comments';
 import {
@@ -56,16 +57,16 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     });
     if (!id)
         return (
-            <div
+            <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
                 {t('Статья не найдена')}
-            </div>
+            </Page>
         );
 
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
-            <div
+            <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
                 <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
@@ -75,7 +76,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                 <Text title={t('Комментарии')} className={cls.commentTitle} />
                 <AddCommentForm onSendComment={onSendComment} />
                 <CommentList comments={comments} isLoading={isLoading} />
-            </div>
+            </Page>
         </DynamicModuleLoader>
     );
 };

@@ -1,6 +1,7 @@
 import { BugButton } from 'app/providers/ErrorBoundry';
 import { FC, memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
+import { Page } from 'shared/ui/Page/Page';
 
 const MainPage: FC = memo(() => {
     const { t } = useTranslation();
@@ -11,10 +12,10 @@ const MainPage: FC = memo(() => {
     };
 
     return (
-        <div>
+        <Page>
             {t('Главная страница')}
             <BugButton />
-        </div>
+        </Page>
     );
 });
 

@@ -21,7 +21,7 @@ const Sidebar = memo(({ className }: SidebarProps) => {
     const sidebarItemsList = useSelector(getSidebarItems);
 
     return (
-        <div
+        <aside
             data-testid="sidebar"
             className={classNames(cls.Sidebar, { [cls.collapsed]: collapsed }, [
                 className,
@@ -51,7 +51,7 @@ const Sidebar = memo(({ className }: SidebarProps) => {
                     />
                 ))}
             </div>
-        </div>
+        </aside>
     );
 });
 export default Sidebar;
