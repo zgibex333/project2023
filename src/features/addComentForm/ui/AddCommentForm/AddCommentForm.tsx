@@ -50,7 +50,7 @@ const AddCommentForm = memo((props: AddCommentFormProps) => {
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <div className={classNames(cls.AddCommentForm, {}, [className])}>
                 <Input
-                    value={text || ''}
+                    value={text}
                     onChange={onCommentTextChange}
                     placeholder={t('Введите текст комментария')}
                     className={cls.input}
