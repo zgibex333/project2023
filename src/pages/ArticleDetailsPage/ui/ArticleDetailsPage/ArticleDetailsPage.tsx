@@ -1,4 +1,4 @@
-import { ArticleDetails } from 'entities/Article';
+import { ArticleDetails, ArticleList, ArticleView } from 'entities/Article';
 import { CommentList } from 'entities/Comment';
 import { memo, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
@@ -10,7 +10,7 @@ import DynamicModuleLoader, {
 } from 'shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from 'shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { useInitialEffect } from 'shared/lib/hooks/useInitialEffect/useInitialEffect';
-import Text from 'shared/ui/Text/Text';
+import Text, { TextSize } from 'shared/ui/Text/Text';
 import { AddCommentForm } from 'features/addComentForm';
 import Button, { ButtonTheme } from 'shared/ui/Button/Button';
 import { RoutePath } from 'shared/config/routeConfig/routeConfig';
@@ -21,15 +21,22 @@ import {
     articleDetailsCommentsReducer,
     getArticleComments,
 } from '../../model/slices/articleDetailsCommentsSlice';
+import {
+    articleDetailsDetailsPageRecommendationsReducer,
+    getArticleRecommendations,
+} from '../../model/slices/articleDetailsPageRecommendationsSlice';
 import cls from './ArticleDetailsPage.module.scss';
 import { addCommentFromArticleDetails } from '../../model/services/addCommentFromArticleDetails/addCommentFromArticleDetails';
+import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
+import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
+import { articleDetailsPageReducer } from '../../model/slices';
 
 interface ArticleDetailsPageProps {
     className?: string;
 }
 
 const reducers: ReducersList = {
-    articleDetailsComments: articleDetailsCommentsReducer,
+    articleDetailsPage: articleDetailsPageReducer,
 };
 
 const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
@@ -37,7 +44,11 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
     const { t } = useTranslation('article-details');
     const { id } = useParams<{ id: string }>();
     const comments = useSelector(getArticleComments.selectAll);
-    const isLoading = useSelector(getArticleCommentsIsLoading);
+    const recommendations = useSelector(getArticleRecommendations.selectAll);
+    const commentsisLoading = useSelector(getArticleCommentsIsLoading);
+    const recomendationsisLoading = useSelector(
+        getArticleRecommendationsIsLoading,
+    );
     const dispatch = useAppDispatch();
     const navigate = useNavigate();
 
@@ -54,6 +65,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
 
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
+        dispatch(fetchArticleRecommendations());
     });
     if (!id)
         return (
@@ -73,9 +85,28 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
                     {t('Назад к списку')}
                 </Button>
                 <ArticleDetails id={id} />
-                <Text title={t('Комментарии')} className={cls.commentTitle} />
+                <Text
+                    size={TextSize.L}
+                    title={t('Рекомендуем')}
+                    className={cls.commentTitle}
+                />
+                <ArticleList
+                    articles={recommendations}
+                    isLoading={recomendationsisLoading}
+                    view={ArticleView.GRID}
+                    className={cls.reccomendations}
+                    target={`${'_blank'}`}
+                />
+                <Text
+                    size={TextSize.L}
+                    title={t('Комментарии')}
+                    className={cls.commentTitle}
+                />
                 <AddCommentForm onSendComment={onSendComment} />
-                <CommentList comments={comments} isLoading={isLoading} />
+                <CommentList
+                    comments={comments}
+                    isLoading={commentsisLoading}
+                />
             </Page>
         </DynamicModuleLoader>
     );
