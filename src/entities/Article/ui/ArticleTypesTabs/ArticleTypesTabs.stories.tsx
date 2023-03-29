@@ -1,19 +1,19 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import ArticleViewSwitcher from './ArticleViewSwitcher';
+import ArticleTypesTabs from './ArticleTypesTabs';
 
 export default {
-    title: 'entities/Article/ArticleViewSwitcher',
-    component: ArticleViewSwitcher,
+    title: 'entities/Article/ArticleTypesTabs',
+    component: ArticleTypesTabs,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
         backgroundColor: { control: 'color' },
     },
-} as ComponentMeta<typeof ArticleViewSwitcher>;
+} as ComponentMeta<typeof ArticleTypesTabs>;
 
 // More on component templates: https://storybook.js.org/docs/react/writing-stories/introduction#using-args
-const Template: ComponentStory<typeof ArticleViewSwitcher> = (args) => (
-    <ArticleViewSwitcher {...args} />
+const Template: ComponentStory<typeof ArticleTypesTabs> = (args) => (
+    <ArticleTypesTabs {...args} />
 );
 
 export const Primary = Template.bind({});

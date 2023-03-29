@@ -9,7 +9,7 @@ import {
 import ArticleDetailsPage from './ArticleDetailsPage';
 
 export default {
-    title: 'pages/ArticleDetailsPage',
+    title: 'pages/Article/ArticleDetailsPage',
     component: ArticleDetailsPage,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

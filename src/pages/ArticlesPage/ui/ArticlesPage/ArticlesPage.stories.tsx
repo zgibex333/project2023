@@ -3,7 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ArticlesPage from './ArticlesPage';
 
 export default {
-    title: 'shared/ArticlesPage',
+    title: 'pages/Article/ArticlesPage',
     component: ArticlesPage,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {

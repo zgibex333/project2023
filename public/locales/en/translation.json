@@ -20,5 +20,19 @@
     "Введите имя пользователя": "Enter username",
     "Введите ссылку на аватар": "Enter link to avatar img",
     "Укажите валюту": "Choose currency",
-    "Укажите страну": "Choose Country"
+    "Укажите страну": "Choose Country",
+    "Сортировать по": "Sort by",
+    "Поиск": "Search",
+    "По": "By",
+    "возрастанию": "ascending",
+    "убыванию": "descending",
+    "Статьи": "Articles",
+    "По дате": "By date",
+    "По просмотрам": "By views",
+    "По названию": "By title",
+    "Все статьи": "All articles",
+    "Aйти": "IT",
+    "Наука": "Science",
+    "Экономика": "Economy",
+    "Статьи не найдены": "Articles not found"
 }
