@@ -1,5 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ArticleEditPage from './ArticleEditPage';
 
 export default {
@@ -19,3 +20,4 @@ const Template: ComponentStory<typeof ArticleEditPage> = (args) => (
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {};
+Primary.decorators = [StoreDecorator({})];

@@ -1,6 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { Theme } from 'app/providers/ThemeProvider';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ThemeDecorator } from 'shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import MainPage from './MainPage';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
@@ -21,7 +22,8 @@ const Template: ComponentStory<typeof MainPage> = (args) => (
 export const Regular = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Regular.args = {};
+Regular.decorators = [StoreDecorator({})];
 
 export const Dark = Template.bind({});
 Dark.args = {};
-Dark.decorators = [ThemeDecorator(Theme.DARK)];
+Dark.decorators = [StoreDecorator({}), ThemeDecorator(Theme.DARK)];

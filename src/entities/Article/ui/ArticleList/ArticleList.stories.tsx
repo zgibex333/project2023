@@ -28,6 +28,7 @@ export const BasicListLoading = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BasicListLoading.args = {
     isLoading: true,
+    articles: [],
 };
 
 export const BasicGrid = Template.bind({});
@@ -42,4 +43,5 @@ export const BasicGridIsLoading = Template.bind({});
 BasicGridIsLoading.args = {
     isLoading: true,
     view: ArticleView.GRID,
+    articles: [],
 };

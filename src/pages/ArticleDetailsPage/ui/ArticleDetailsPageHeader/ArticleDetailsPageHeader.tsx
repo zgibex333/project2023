@@ -19,7 +19,7 @@ const ArticleDetailsPageHeader = memo(
         const { className } = props;
         const { t } = useTranslation();
         const navigate = useNavigate();
-        const useData = useSelector(getUserAuthData);
+        const userData = useSelector(getUserAuthData);
         const article = useSelector(getArticleDetailsData);
 
         const canEdit = useSelector(getCanEditArticle);
