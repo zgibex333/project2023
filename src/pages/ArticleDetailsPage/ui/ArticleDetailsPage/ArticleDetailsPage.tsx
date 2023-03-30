@@ -30,6 +30,7 @@ import { addCommentFromArticleDetails } from '../../model/services/addCommentFro
 import { getArticleRecommendationsIsLoading } from '../../model/selectors/recommendations';
 import { fetchArticleRecommendations } from '../../model/services/fetchArticleRecommendations/fetchArticleRecommendations';
 import { articleDetailsPageReducer } from '../../model/slices';
+import ArticleDetailsPageHeader from '../ArticleDetailsPageHeader/ArticleDetailsPageHeader';
 
 interface ArticleDetailsPageProps {
     className?: string;
@@ -59,10 +60,6 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
         [dispatch],
     );
 
-    const onBackToList = useCallback(() => {
-        navigate(RoutePath.articles);
-    }, [navigate]);
-
     useInitialEffect(() => {
         dispatch(fetchCommentsByArticleId(id));
         dispatch(fetchArticleRecommendations());
@@ -81,9 +78,7 @@ const ArticleDetailsPage = (props: ArticleDetailsPageProps) => {
             <Page
                 className={classNames(cls.ArticleDetailsPage, {}, [className])}
             >
-                <Button theme={ButtonTheme.OUTLINE} onClick={onBackToList}>
-                    {t('Назад к списку')}
-                </Button>
+                <ArticleDetailsPageHeader />
                 <ArticleDetails id={id} />
                 <Text
                     size={TextSize.L}
