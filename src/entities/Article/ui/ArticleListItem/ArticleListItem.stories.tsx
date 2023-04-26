@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ArticleExample } from 'shared/lib/tests/ArticleExample/ArticleExample';
-import { ArticleView } from 'entities/Article/model/types/article';
+import { ArticleView } from '../../model/types/article';
 import ArticleListItem from './ArticleListItem';
 
 export default {

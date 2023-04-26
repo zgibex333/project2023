@@ -24,6 +24,7 @@ module.exports = {
         '@typescript-eslint',
         'prettier',
         'react-hooks',
+        'zgibex-plugin',
     ],
     rules: {
         'prettier/prettier': ['error'],
@@ -68,6 +69,7 @@ module.exports = {
         'react-hooks/exhaustive-deps': 'error',
         'no-param-reassign': 'off',
         'no-undef': 'off',
+        'zgibex-plugin/path-checker': 'error',
     },
     globals: {
         __IS_DEV__: true,
