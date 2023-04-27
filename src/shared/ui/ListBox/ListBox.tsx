@@ -1,6 +1,7 @@
 import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, memo, ReactNode, useState } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import { DropdownDirection } from 'shared/types/ui';
 import Button from '../Button/Button';
 import { HStack } from '../Stack';
 import cls from './ListBox.module.scss';
@@ -10,8 +11,6 @@ interface ListBoxItem {
     content: ReactNode;
     disabled?: boolean;
 }
-
-type DropdownDirection = 'top' | 'bottom';
 
 interface ListBoxProps {
     className?: string;
