@@ -43,7 +43,7 @@ const Sidebar = memo(({ className }: SidebarProps) => {
             >
                 {collapsed ? '>' : '<'}
             </Button>
-            <VStack className={cls.items} gap="8">
+            <VStack role="navigation" className={cls.items} gap="8">
                 {sidebarItemsList.map((item) => (
                     <SidebarItem
                         key={item.path}
