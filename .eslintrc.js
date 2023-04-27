@@ -60,6 +60,7 @@ module.exports = {
                     'justify',
                     'align',
                     'role',
+                    'as',
                 ],
             },
         ],
