@@ -27,6 +27,7 @@ import {
 } from '../../model/slice/ArticlesPageSlice';
 import cls from './ArticlesPage.module.scss';
 import ArticlesPageFilters from '../ArticlesPageFilters/ArticlesPageFilters';
+import ArticleInfiniteList from '../ArticleInfiniteList/ArticleInfiniteList';
 
 interface ArticlesPageProps {
     className?: string;
@@ -38,17 +39,14 @@ const reducers: ReducersList = {
 
 const ArticlesPage = (props: ArticlesPageProps) => {
     const { className } = props;
-    const { t } = useTranslation('article');
+
     const dispatch = useAppDispatch();
-    const view = useSelector(getArticlesPageView);
+
     const [searchParams] = useSearchParams();
 
     useInitialEffect(() => {
         dispatch(initArticlesPage(searchParams));
     });
-
-    const articles = useSelector(getArticles.selectAll);
-    const isLoading = useSelector(getArticlesPageIsLoading);
 
     const onLoadNextPart = useCallback(() => {
         if (__PROJECT__ !== 'storybook') {
@@ -63,13 +61,7 @@ const ArticlesPage = (props: ArticlesPageProps) => {
                 className={classNames(cls.ArticlesPage, {}, [className])}
             >
                 <ArticlesPageFilters />
-
-                <ArticleList
-                    isLoading={isLoading}
-                    view={view}
-                    articles={articles}
-                    className={cls.list}
-                />
+                <ArticleInfiniteList className={cls.list} />
             </Page>
         </DynamicModuleLoader>
     );
