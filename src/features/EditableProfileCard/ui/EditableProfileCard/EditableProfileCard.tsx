@@ -28,7 +28,7 @@ const reducers: ReducersList = {
 
 interface EditableProfileCardProps {
     className?: string;
-    id: string;
+    id?: string;
 }
 
 const EditableProfileCard = memo((props: EditableProfileCardProps) => {
@@ -106,7 +106,7 @@ const EditableProfileCard = memo((props: EditableProfileCardProps) => {
         (value?: string) => {
             dispatch(
                 profileActions.updateProfile({
-                    city: value || '',
+                    avatar: value || '',
                 }),
             );
         },

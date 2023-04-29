@@ -111,6 +111,7 @@ const ArticleList = memo((props: ArticleListProps) => {
     };
 
     return (
+        // @ts-ignore
         <WindowScroller
             onScroll={() => console.log('scroll')}
             scrollElement={document.getElementById(PAGE_ID) as Element}
@@ -124,6 +125,7 @@ const ArticleList = memo((props: ArticleListProps) => {
                 scrollTop,
             }) => (
                 <div
+                    // @ts-ignore
                     ref={registerChild}
                     className={classNames(cls.ArticleList, {}, [
                         className,
@@ -131,6 +133,7 @@ const ArticleList = memo((props: ArticleListProps) => {
                     ])}
                 >
                     {virtualized ? (
+                        // @ts-ignore
                         <List
                             // ref="List"
                             // className={cls.List}

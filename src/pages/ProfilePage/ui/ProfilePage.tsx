@@ -15,10 +15,6 @@ const ProfilePage = memo(({ className }: ProfilePageProps) => {
     const { id } = useParams();
     const { t } = useTranslation();
 
-    if (!id) {
-        return <Text text={t('Произошла непредвиденная ошибка')} />;
-    }
-
     return (
         <Page className={classNames('', {}, [className])}>
             <VStack gap="16" max>

@@ -1,9 +1,10 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDecorator';
 import ForbiddenPage from './ForbiddenPage';
 
 export default {
-    title: 'shared/ForbiddenPage',
+    title: 'Pages/ForbiddenPage',
     component: ForbiddenPage,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
@@ -19,3 +20,4 @@ const Template: ComponentStory<typeof ForbiddenPage> = (args) => (
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 Primary.args = {};
+Primary.decorators = [StoreDecorator({})];

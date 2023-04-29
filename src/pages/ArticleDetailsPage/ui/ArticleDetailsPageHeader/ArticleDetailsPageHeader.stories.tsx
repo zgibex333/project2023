@@ -4,7 +4,7 @@ import { StoreDecorator } from 'shared/config/storybook/StoreDecorator/StoreDeco
 import ArticleDetailsPageHeader from './ArticleDetailsPageHeader';
 
 export default {
-    title: 'shared/ArticleDetailsPageHeader',
+    title: 'Pages/Article/ArticleDetailsPageHeader',
     component: ArticleDetailsPageHeader,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
