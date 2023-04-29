@@ -20,10 +20,11 @@ import {
     getArticleDetailsIsLoading,
 } from '../../model/selectors/articleDetails.selectors';
 import { fetchArticleById } from '../../model/services/fetchArticleById/fetchArticleById';
-import { ArticleBlock, ArticleBlockType } from '../../model/types/article';
+import { ArticleBlock } from '../../model/types/article';
 import ArticleCodeBlockComponent from '../ArticleCodeBlockComponent/ArticleCodeBlockComponent';
 import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleImageBlockComponent';
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
+import { ArticleBlockType } from '../../model/consts/consts';
 import cls from './ArticleDetails.module.scss';
 
 interface ArticleDetailsProps {

@@ -3,6 +3,9 @@ import { ArticleDetailsRecommendationsSchema } from './model/types/ArticleDetail
 import { ArticleDetailsPageAsync as ArticleDetailsPage } from './ui/ArticleDetailsPage/ArticleDetailsPage.async';
 
 export { articleDetailsPageReducer } from './model/slices';
-export { ArticleDetailsPageSchema } from './model/types';
-export { ArticleDetailsCommentsSchema, ArticleDetailsRecommendationsSchema };
+export type { ArticleDetailsPageSchema } from './model/types';
+export type {
+    ArticleDetailsCommentsSchema,
+    ArticleDetailsRecommendationsSchema,
+};
 export default ArticleDetailsPage;

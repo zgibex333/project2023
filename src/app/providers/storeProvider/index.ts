@@ -7,12 +7,6 @@ import type {
     ThunkConfig,
 } from './config/StateSchema';
 
-export {
-    StoreProvider,
-    createReduxStore,
-    StateSchema,
-    ReduxStoreWithManager,
-    AppDispatch,
-    ThunkExtraArg,
-    ThunkConfig,
-};
+export { StoreProvider, createReduxStore, StateSchema, ReduxStoreWithManager };
+
+export type { AppDispatch, ThunkExtraArg, ThunkConfig };

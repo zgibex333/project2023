@@ -5,6 +5,6 @@ import {
 import { AddCommentFormSchema } from './model/types/addCommentForm';
 import { AddCommentFormAsync as AddCommentForm } from './ui/AddCommentForm/AddCommentForm.async';
 
-export { AddCommentFormSchema };
+export type { AddCommentFormSchema };
 export { addCommentFormActions, addCommentFormReducer };
 export { AddCommentForm };
