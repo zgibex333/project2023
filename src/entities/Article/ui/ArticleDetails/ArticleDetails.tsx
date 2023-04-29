@@ -82,9 +82,9 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
 
     let content;
 
-    if (isLoading) {
+    if (true) {
         content = (
-            <div>
+            <VStack max>
                 <Skeleton
                     className={cls.avatar}
                     width={200}
@@ -95,7 +95,7 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
                 <Skeleton className={cls.skeleton} width={600} height={24} />
                 <Skeleton className={cls.skeleton} width="100%" height={200} />
                 <Skeleton className={cls.skeleton} width="100%" height={200} />
-            </div>
+            </VStack>
         );
     }
 
@@ -142,6 +142,7 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
     return (
         <DynamicModuleLoader reducers={reducers} removeAfterUnmount>
             <VStack
+                max
                 gap="16"
                 className={classNames(cls.ArticleDetails, {}, [className])}
             >
