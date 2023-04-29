@@ -63,6 +63,8 @@ const ProfileCard = ({
         );
     }
     if (error) {
+        console.log(error);
+
         return (
             <HStack
                 justify="center"
@@ -96,12 +98,14 @@ const ProfileCard = ({
                 placeholder={t('Ваше имя')}
                 onChange={onChangeFirstname}
                 readOnly={readonly}
+                data-testid="ProfileCard.Firstname"
             />
             <Input
                 value={data?.lastname}
                 placeholder={t('Ваша фамилия')}
                 onChange={onChangeLastname}
                 readOnly={readonly}
+                data-testid="ProfileCard.Lastname"
             />
             <Input
                 value={data?.age}

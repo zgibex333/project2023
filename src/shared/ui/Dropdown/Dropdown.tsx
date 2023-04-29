@@ -47,6 +47,7 @@ const Dropdown = memo((props: DropdownProps) => {
                         if (item.href) {
                             return (
                                 <Menu.Item
+                                    key={`key${Math.random()}`}
                                     as={AppLink}
                                     to={item.href}
                                     disabled={item.disabled}
@@ -56,7 +57,11 @@ const Dropdown = memo((props: DropdownProps) => {
                             );
                         }
                         return (
-                            <Menu.Item as={Fragment} disabled={item.disabled}>
+                            <Menu.Item
+                                key={`key${Math.random()}`}
+                                as={Fragment}
+                                disabled={item.disabled}
+                            >
                                 {content}
                             </Menu.Item>
                         );

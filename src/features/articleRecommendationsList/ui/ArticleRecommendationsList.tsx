@@ -1,7 +1,6 @@
 import { ArticleList, ArticleView } from 'entities/Article';
 import { memo } from 'react';
 import { useTranslation } from 'react-i18next';
-import { rtkApi } from 'shared/api/rtkApi';
 import { classNames } from 'shared/lib/classNames/classNames';
 import { VStack } from 'shared/ui/Stack';
 import Text, { TextSize } from 'shared/ui/Text/Text';
@@ -21,7 +20,7 @@ const ArticleRecommendationsList = memo(
             isError,
         } = useGetArticleRecommendationsListQuery(3);
 
-        if (isLoading || isError) {
+        if (isLoading || isError || !articles) {
             return null;
         }
 
@@ -32,6 +31,7 @@ const ArticleRecommendationsList = memo(
                     articles={articles}
                     view={ArticleView.GRID}
                     target={`${'_blank'}`}
+                    virtualized={false}
                 />
             </VStack>
         );

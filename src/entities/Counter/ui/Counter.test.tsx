@@ -14,7 +14,7 @@ describe('Counter', () => {
         });
         expect(screen.getByTestId('value-title')).toHaveTextContent('10');
     });
-    test('should increment value', () => {
+    test('should increment value', async () => {
         componentRender(<Counter />, {
             initialState: {
                 counter: {
@@ -22,10 +22,10 @@ describe('Counter', () => {
                 },
             },
         });
-        userEvent.click(screen.getByTestId('increment-btn'));
+        await userEvent.click(screen.getByTestId('increment-btn'));
         expect(screen.getByTestId('value-title')).toHaveTextContent('11');
     });
-    test('should decrement value', () => {
+    test('should decrement value', async () => {
         componentRender(<Counter />, {
             initialState: {
                 counter: {
@@ -33,7 +33,7 @@ describe('Counter', () => {
                 },
             },
         });
-        userEvent.click(screen.getByTestId('decrement-btn'));
+        await userEvent.click(screen.getByTestId('decrement-btn'));
         expect(screen.getByTestId('value-title')).toHaveTextContent('9');
     });
 });
