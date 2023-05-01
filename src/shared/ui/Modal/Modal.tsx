@@ -7,6 +7,7 @@ import React, {
     MutableRefObject,
 } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
+import Overlay from '../Overlay/Overlay';
 import Portal from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
@@ -40,10 +41,6 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
             }, ANIMATION_DELAY);
         }
     }, [onClose]);
-
-    const onContentClick = (e: MouseEvent) => {
-        e.stopPropagation();
-    };
 
     const onKeyDown = useCallback(
         (e: KeyboardEvent): any => {
@@ -89,11 +86,8 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
     return (
         <Portal>
             <div className={classNames(cls.Modal, mods, [className])}>
-                <div className={cls.overlay} onClick={closeHandler}>
-                    <div className={cls.content} onClick={onContentClick}>
-                        {children}
-                    </div>
-                </div>
+                <Overlay onClick={closeHandler} />
+                <div className={cls.content}>{children}</div>
             </div>
         </Portal>
     );
