@@ -49,3 +49,12 @@
         transform: translateY(0%);
     }
 }
+
+.closed {
+    pointer-events: none;
+    z-index: var(--modal-z-index);
+
+    .content {
+        transform: translateY(100%);
+    }
+}

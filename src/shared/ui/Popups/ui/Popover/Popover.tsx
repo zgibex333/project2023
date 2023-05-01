@@ -26,6 +26,7 @@ const Popover = memo((props: PopoverProps) => {
             </PopoverComponent.Button>
 
             <PopoverComponent.Panel
+                // unmount={false}
                 className={classNames(cls.panel, {}, [postitionOption])}
             >
                 {children}
