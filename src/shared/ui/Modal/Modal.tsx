@@ -71,7 +71,7 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
             setIsMounted(true);
             timeRef2.current = setTimeout(() => {
                 setIsOpening(true);
-            });
+            }, ANIMATION_DELAY);
         }
         return () => {
             clearTimeout(timeRef2.current);
