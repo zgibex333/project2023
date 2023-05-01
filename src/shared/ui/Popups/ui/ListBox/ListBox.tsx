@@ -2,9 +2,11 @@ import { Listbox as HListBox } from '@headlessui/react';
 import { Fragment, memo, ReactNode, useState } from 'react';
 import { classNames, Mods } from 'shared/lib/classNames/classNames';
 import { DropdownDirection } from 'shared/types/ui';
-import Button from '../Button/Button';
-import { HStack } from '../Stack';
+import { HStack } from '../../../Stack/index';
+import Button from '../../../Button/Button';
+import { mapDirectionClass } from '../../styles/const';
 import cls from './ListBox.module.scss';
+import popupCls from '../../styles/popup.module.scss';
 
 interface ListBoxItem {
     value: string;
@@ -32,9 +34,9 @@ const ListBox = memo((props: ListBoxProps) => {
         value,
         readonly,
         label,
-        direction = 'bottom',
+        direction = 'bottomLeft',
     } = props;
-
+    const postitionOption = mapDirectionClass[direction];
     return (
         <HStack
             gap="4"
@@ -43,16 +45,16 @@ const ListBox = memo((props: ListBoxProps) => {
             {label && <span className={cls.label}>{`${label}>`}</span>}
             <HListBox
                 as="div"
-                className={classNames(cls.ListBox, {}, [className])}
+                className={classNames('', {}, [className, popupCls.popup])}
                 value={value}
                 onChange={onChange}
                 disabled={readonly}
             >
-                <HListBox.Button className={cls.trigger}>
+                <HListBox.Button className={popupCls.trigger}>
                     <Button disabled={readonly}>{value ?? defaultValue}</Button>
                 </HListBox.Button>
                 <HListBox.Options
-                    className={classNames(cls.options, {}, [cls[direction]])}
+                    className={classNames(cls.options, {}, [postitionOption])}
                 >
                     {items?.map((item) => (
                         <HListBox.Option
@@ -66,8 +68,8 @@ const ListBox = memo((props: ListBoxProps) => {
                                     className={classNames(
                                         cls.option,
                                         {
-                                            [cls.active]: active,
-                                            [cls.disabled]: item.disabled,
+                                            [popupCls.active]: active,
+                                            [popupCls.disabled]: item.disabled,
                                         },
                                         [],
                                     )}
