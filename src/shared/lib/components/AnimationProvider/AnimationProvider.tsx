@@ -41,7 +41,7 @@ export const AnimationProvider = ({ children }: { children: ReactNode }) => {
     const value = useMemo(
         () => ({
             Gesture: GestureRef.current,
-            SpringRef: SpringRef.current,
+            Spring: SpringRef.current,
             isLoaded,
         }),
         [isLoaded],
