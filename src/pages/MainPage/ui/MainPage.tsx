@@ -1,8 +1,8 @@
-import { BugButton } from 'app/providers/ErrorBoundry';
 import { FC, memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { HStack } from 'shared/ui/Stack';
-import { Page } from 'widgets/Page/Page';
+import { BugButton } from '@/app/providers/ErrorBoundry';
+import { HStack } from '@/shared/ui/Stack';
+import { Page } from '@/widgets/Page/Page';
 
 const MainPage: FC = memo(() => {
     const { t } = useTranslation();

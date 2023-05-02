@@ -1,8 +1,8 @@
-import { StateSchema } from 'app/providers/storeProvider';
-import { ArticleView } from 'entities/Article';
-import { Country } from 'entities/Country';
-import { Currency } from 'entities/Currency';
-import { TestAsyncThunk } from 'shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
+import { StateSchema } from '@/app/providers/storeProvider';
+import { ArticleView } from '@/entities/Article';
+import { Country } from '@/entities/Country';
+import { Currency } from '@/entities/Currency';
+import { TestAsyncThunk } from '@/shared/lib/tests/TestAsyncThunk/TestAsyncThunk';
 import {
     articlesPageActions,
     articlesPageReducer,

@@ -1,6 +1,6 @@
 /* eslint-disable max-len */
 
-import { Article, ArticleBlockType, ArticleType } from 'entities/Article';
+import { Article, ArticleBlockType, ArticleType } from '@/entities/Article';
 
 export const ArticleExample: Article = {
     id: '1',

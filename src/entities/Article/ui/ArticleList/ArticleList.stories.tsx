@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ArticleExample } from 'shared/lib/tests/ArticleExample/ArticleExample';
+import { ArticleExample } from '@/shared/lib/tests/ArticleExample/ArticleExample';
 import ArticleList from './ArticleList';
 import { ArticleView } from '../../model/consts/consts';
 

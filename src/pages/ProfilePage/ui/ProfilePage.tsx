@@ -1,11 +1,11 @@
 import { memo } from 'react';
-import { EditableProfileCard } from 'features/EditableProfileCard';
-import { classNames } from 'shared/lib/classNames/classNames';
-import { Page } from 'widgets/Page/Page';
-import VStack from 'shared/ui/Stack/VStack/VStack';
 import { useParams } from 'react-router-dom';
-import Text from 'shared/ui/Text/Text';
 import { useTranslation } from 'react-i18next';
+import { EditableProfileCard } from '@/features/EditableProfileCard';
+import { classNames } from '@/shared/lib/classNames/classNames';
+import { Page } from '@/widgets/Page/Page';
+import VStack from '@/shared/ui/Stack/VStack/VStack';
+import Text from '@/shared/ui/Text/Text';
 
 interface ProfilePageProps {
     className?: string;
