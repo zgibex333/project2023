@@ -34,12 +34,12 @@ const NotificationButton = memo((props: NotificationButtonProps) => {
     );
 
     const content = isMobile ? (
-        <AnimationProvider>
+        <>
             {trigger}
             <Drawer isOpen={isOpen} onClose={onCloseDrawer}>
                 <NotificationList />
             </Drawer>
-        </AnimationProvider>
+        </>
     ) : (
         <Popover
             className={classNames(cls.NotificationButton, {}, [className])}
