@@ -39,5 +39,9 @@
     "Редактировать": "Edit",
     "Создать статью": "Create Article",
     "Админка": "Admin panel",
-    "У вас нет доступа к этой странице": "You don't have acces to this page"
+    "У вас нет доступа к этой странице": "You don't have acces to this page",
+    "Ваш отзыв": "Your review",
+    "Как вам статья?": "What do you think about article?",
+    "Оставьте ваш отзыв": "Leave your review",
+    "Закрыть": "Close"
 }

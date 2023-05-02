@@ -21,7 +21,7 @@ const Popover = memo((props: PopoverProps) => {
         <PopoverComponent
             className={classNames(cls.Popover, {}, [className, popupCls.popup])}
         >
-            <PopoverComponent.Button className={popupCls.trigger}>
+            <PopoverComponent.Button as="div" className={popupCls.trigger}>
                 {trigger}
             </PopoverComponent.Button>
 
