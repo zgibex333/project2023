@@ -79,7 +79,17 @@ module.exports = {
         'no-param-reassign': 'off',
         'no-undef': 'off',
         'zgibex-plugin/path-checker': ['error', { alias: '@' }],
-        'zgibex-plugin/public-api-imports': ['error', { alias: '@' }],
+        'zgibex-plugin/public-api-imports': [
+            'error',
+            {
+                alias: '@',
+                testFilePatterns: [
+                    '**/*.test.*',
+                    '**/*.story.*',
+                    '**/StoreDecorator.tsx',
+                ],
+            },
+        ],
         'react/jsx-props-no-spreading': [
             1,
             {
