@@ -18,4 +18,13 @@ const Template: ComponentStory<typeof Popover> = (args) => (
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {};
+Primary.args = {
+    trigger: <button type="button">Trigger</button>,
+    children: (
+        <div>
+            <p>card1</p>
+            <p>card2</p>
+            <p>card3</p>
+        </div>
+    ),
+};

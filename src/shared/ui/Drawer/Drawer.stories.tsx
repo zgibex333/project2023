@@ -16,4 +16,13 @@ const Template: ComponentStory<typeof Drawer> = (args) => <Drawer {...args} />;
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {};
+Primary.args = {
+    isOpen: true,
+    children: (
+        <div>
+            <p>Card1</p>
+            <p>Card2</p>
+            <p>Card3</p>
+        </div>
+    ),
+};

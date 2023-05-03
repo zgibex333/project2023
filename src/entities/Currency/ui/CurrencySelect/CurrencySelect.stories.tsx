@@ -4,7 +4,7 @@ import CurrencySelect from './CurrencySelect';
 
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
-    title: 'shared/CurrencySelect',
+    title: 'entities/Currency/CurrencySelect',
     component: CurrencySelect,
     // More on argTypes: https://storybook.js.org/docs/react/api/argtypes
     argTypes: {
