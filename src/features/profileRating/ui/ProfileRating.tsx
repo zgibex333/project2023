@@ -8,7 +8,7 @@ import {
     useGetProfileRatingQuery,
     useRatePtofileMutation,
 } from '../api/profileRatingApi';
-import { getProfileData } from '@/features/EditableProfileCard/model/selectors/getProfileData/getProfileData';
+import { getProfileData } from '@/features/EditableProfileCard';
 import Skeleton from '@/shared/ui/Skeleton/Skeleton/Skeleton';
 
 export interface ProfileRatingProps {

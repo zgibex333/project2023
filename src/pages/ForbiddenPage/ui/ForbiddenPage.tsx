@@ -1,7 +1,7 @@
-import { FC, memo, useState } from 'react';
+import { FC, memo } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BugButton } from '@/app/providers/ErrorBoundry';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 
 const ForbiddenPage: FC = memo(() => {
     const { t } = useTranslation();

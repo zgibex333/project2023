@@ -2,7 +2,7 @@ import { FC, memo, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { BugButton } from '@/app/providers/ErrorBoundry';
 import { HStack } from '@/shared/ui/Stack';
-import { Page } from '@/widgets/Page/Page';
+import { Page } from '@/widgets/Page';
 import StarRating from '@/shared/ui/StarRating/StarRating';
 import { RatingCard } from '@/entities/Rating';
 
