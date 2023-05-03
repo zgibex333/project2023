@@ -828,6 +828,13 @@
       "feedback": "Хорошая статья",
       "userId": "1",
       "profileId": "2"
+    },
+    {
+      "profileId": "1",
+      "userId": "2",
+      "rate": 3,
+      "feedback": "loh",
+      "id": "eTmP2WQ"
     }
   ]
 }
