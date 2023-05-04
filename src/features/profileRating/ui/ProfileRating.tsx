@@ -8,7 +8,6 @@ import {
     useGetProfileRatingQuery,
     useRatePtofileMutation,
 } from '../api/profileRatingApi';
-import { getProfileData } from '@/features/EditableProfileCard';
 import Skeleton from '@/shared/ui/Skeleton/Skeleton/Skeleton';
 
 export interface ProfileRatingProps {
@@ -20,7 +19,6 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
     const { className, profileId } = props;
     const { t } = useTranslation();
     const authData = useSelector(getUserAuthData);
-    const profileData = useSelector(getProfileData);
     const { data, isLoading } = useGetProfileRatingQuery({
         userId: authData?.id ?? '',
         profileId: profileId ?? '',
@@ -57,7 +55,7 @@ const ProfileRating = memo((props: ProfileRatingProps) => {
         [handleRateProfileMutation],
     );
 
-    const canVote = authData?.id !== profileData?.id;
+    const canVote = authData?.id !== profileId;
 
     const rate = data?.[0]?.rate;
 

@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleExample } from '@/shared/lib/tests/ArticleExample/ArticleExample';
 import ArticleDetails from './ArticleDetails';
+import { Article } from '../../model/types/article';
 
 export default {
     title: 'entities/ArticleDetails',
@@ -24,7 +25,7 @@ Basic.args = {};
 Basic.decorators = [
     StoreDecorator({
         articleDetails: {
-            data: ArticleExample,
+            data: ArticleExample as Article,
         },
     }),
 ];

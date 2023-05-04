@@ -1,11 +1,11 @@
-import { CombinedState, Reducer } from '@reduxjs/toolkit';
+import { Reducer } from '@reduxjs/toolkit';
 import { ReactElement, useEffect } from 'react';
 import { useDispatch, useStore } from 'react-redux';
-import { ReduxStoreWithManager } from '@/app/providers/storeProvider';
 import {
+    ReduxStoreWithManager,
     StateSchema,
     StateSchemaKey,
-} from '@/app/providers/storeProvider/config/StateSchema';
+} from '@/app/providers/storeProvider';
 
 export type ReducersList = {
     [name in StateSchemaKey]?: Reducer<NonNullable<StateSchema[name]>>;

@@ -90,6 +90,17 @@ module.exports = {
                 ],
             },
         ],
+        'zgibex-plugin/layers-imports': [
+            'error',
+            {
+                alias: '@',
+                ignoreImportPatterns: [
+                    '**/StoreProvider',
+                    '**/storeProvider',
+                    '**/testing',
+                ],
+            },
+        ],
         'react/jsx-props-no-spreading': [
             1,
             {

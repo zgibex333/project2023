@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { StoreDecorator } from '@/shared/config/storybook/StoreDecorator/StoreDecorator';
 import { ArticleExample } from '@/shared/lib/tests/ArticleExample/ArticleExample';
 import ArticlesPage from './ArticlesPage';
+import { Article } from '@/entities/Article';
 
 export default {
     title: 'pages/Article/ArticlesPage',
@@ -25,7 +26,7 @@ Primary.decorators = [
     StoreDecorator({
         articlesPage: {
             entities: {
-                '1': ArticleExample,
+                '1': ArticleExample as Article,
             },
             ids: ['1'],
         },

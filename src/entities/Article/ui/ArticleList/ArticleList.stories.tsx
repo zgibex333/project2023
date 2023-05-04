@@ -3,6 +3,7 @@ import { ComponentStory, ComponentMeta } from '@storybook/react';
 import { ArticleExample } from '@/shared/lib/tests/ArticleExample/ArticleExample';
 import ArticleList from './ArticleList';
 import { ArticleView } from '../../model/consts/consts';
+import { Article } from '../../model/types/article';
 
 export default {
     title: 'entities/Article/ArticleList',
@@ -21,7 +22,7 @@ const Template: ComponentStory<typeof ArticleList> = (args) => (
 export const BasicList = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BasicList.args = {
-    articles: new Array(4).fill(0).map((_) => ArticleExample),
+    articles: new Array(4).fill(0).map((_) => ArticleExample) as Article[],
 };
 
 export const BasicListLoading = Template.bind({});
@@ -34,7 +35,7 @@ BasicListLoading.args = {
 export const BasicGrid = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
 BasicGrid.args = {
-    articles: new Array(4).fill(0).map((_) => ArticleExample),
+    articles: new Array(4).fill(0).map((_) => ArticleExample) as Article[],
     view: ArticleView.GRID,
 };
 
