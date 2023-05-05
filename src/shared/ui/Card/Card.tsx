@@ -13,7 +13,7 @@ interface CardProps extends HTMLAttributes<HTMLDivElement> {
     max?: boolean;
 }
 
-const Card = memo((props: CardProps) => {
+export const Card = memo((props: CardProps) => {
     const {
         className,
         children,
@@ -33,4 +33,3 @@ const Card = memo((props: CardProps) => {
         </div>
     );
 });
-export default Card;

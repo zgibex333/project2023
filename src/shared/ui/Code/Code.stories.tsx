@@ -1,6 +1,6 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import Code from './Code';
+import { Code } from './Code';
 
 export default {
     title: 'shared/Code',

@@ -1,8 +1,8 @@
 import React from 'react';
 import { classNames, Mods } from '@/shared/lib/classNames/classNames';
 import { useModal } from '@/shared/lib/hooks/useModal/useModal';
-import Overlay from '../Overlay/Overlay';
-import Portal from '../Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
 import cls from './Modal.module.scss';
 
 interface ModalProps {
@@ -15,7 +15,13 @@ interface ModalProps {
 
 const ANIMATION_DELAY = 100;
 
-const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
+export const Modal = ({
+    className,
+    children,
+    isOpen,
+    onClose,
+    lazy,
+}: ModalProps) => {
     const { isOpening, isClosing, isMounted, close } = useModal({
         animationDelay: ANIMATION_DELAY,
         isOpen,
@@ -40,4 +46,3 @@ const Modal = ({ className, children, isOpen, onClose, lazy }: ModalProps) => {
         </Portal>
     );
 };
-export default Modal;

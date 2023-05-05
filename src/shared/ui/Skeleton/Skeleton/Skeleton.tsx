@@ -9,7 +9,7 @@ interface SkeletonProps {
     border?: string;
 }
 
-const Skeleton = memo((props: SkeletonProps) => {
+export const Skeleton = memo((props: SkeletonProps) => {
     const { className, border, height, width } = props;
 
     const styles: CSSProperties = {
@@ -25,4 +25,3 @@ const Skeleton = memo((props: SkeletonProps) => {
         />
     );
 });
-export default Skeleton;

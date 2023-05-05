@@ -2,16 +2,15 @@ import { memo, ReactNode, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import CopyIcon from '@/shared/assets/icons/copy-20-20.svg';
-import Button, { ButtonTheme } from '../Button/Button';
+import { Button, ButtonTheme } from '../Button/Button';
 import cls from './Code.module.scss';
-import Icon from '../Icon/Icon';
 
 interface CodeProps {
     className?: string;
     text: string;
 }
 
-const Code = memo((props: CodeProps) => {
+export const Code = memo((props: CodeProps) => {
     const { className, text } = props;
 
     const onCopy = useCallback(() => {
@@ -31,4 +30,3 @@ const Code = memo((props: CodeProps) => {
         </pre>
     );
 });
-export default Code;

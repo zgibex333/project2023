@@ -6,13 +6,13 @@ import DynamicModuleLoader, {
     ReducersList,
 } from '@/shared/lib/components/DynamicModuleLoader/DynamicModuleLoader';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
-import Text, { TextAlign, TextSize } from '@/shared/ui/Text/Text';
-import Skeleton from '@/shared/ui/Skeleton/Skeleton/Skeleton';
-import Avatar from '@/shared/ui/Avatar/Avatar';
+import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
+import { Skeleton } from '@/shared/ui/Skeleton';
+import { Avatar } from '@/shared/ui/Avatar';
 import ViewIcon from '@/shared/assets/icons/eye-icon.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-icon.svg';
 import { HStack, VStack } from '@/shared/ui/Stack';
-import Icon from '@/shared/ui/Icon/Icon';
+import { Icon } from '@/shared/ui/Icon';
 import { articleDetailsSlice } from '../../model/slice/articleDetailsSlice';
 import {
     getArticleDetailsData,

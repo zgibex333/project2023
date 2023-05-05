@@ -38,7 +38,7 @@ const mapSizeToHeaderTag: Record<TextSize, HeaderTag> = {
     [TextSize.L]: 'h1',
 };
 
-const Text = memo((props: TextProps) => {
+export const Text = memo((props: TextProps) => {
     const {
         className,
         title,
@@ -76,4 +76,3 @@ const Text = memo((props: TextProps) => {
         </div>
     );
 });
-export default Text;

@@ -8,7 +8,7 @@ import {
     useGetProfileRatingQuery,
     useRatePtofileMutation,
 } from '../api/profileRatingApi';
-import Skeleton from '@/shared/ui/Skeleton/Skeleton/Skeleton';
+import { Skeleton } from '@/shared/ui/Skeleton';
 
 export interface ProfileRatingProps {
     className?: string;

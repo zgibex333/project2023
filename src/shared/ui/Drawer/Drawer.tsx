@@ -6,8 +6,8 @@ import {
 } from '@/shared/lib/components/AnimationProvider';
 
 import cls from './Drawer.module.scss';
-import Portal from '../Portal/Portal';
-import Overlay from '../Overlay/Overlay';
+import { Portal } from '../Portal/Portal';
+import { Overlay } from '../Overlay/Overlay';
 import { useTheme } from '@/shared/lib/hooks/useTheme/useTheme';
 
 interface DrawerProps {
@@ -116,10 +116,8 @@ const DrawerAsync = memo((props: DrawerProps) => {
     return <DrawerContent {...props} />;
 });
 
-const Drawer = (props: DrawerProps) => (
+export const Drawer = (props: DrawerProps) => (
     <AnimationProvider>
         <DrawerAsync {...props} />
     </AnimationProvider>
 );
-
-export default Drawer;
