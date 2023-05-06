@@ -1,7 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
 import ArticleTypesTabs from './ArticleTypesTabs';
-import { ArticleType } from '../../model/consts/consts';
+import { ArticleType } from '@/entities/Article';
 
 export default {
     title: 'entities/Article/ArticleTypesTabs',

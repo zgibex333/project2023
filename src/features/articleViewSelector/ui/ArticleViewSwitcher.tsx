@@ -4,8 +4,8 @@ import GridIcon from '@/shared/assets/icons/grid-24-24.svg';
 import ListIcon from '@/shared/assets/icons/list-24-24.svg';
 import { Button, ButtonTheme } from '@/shared/ui/Button';
 import { Icon } from '@/shared/ui/Icon';
-import { ArticleView } from '../../model/consts/consts';
 import cls from './ArticleViewSwitcher.module.scss';
+import { ArticleView } from '@/entities/Article';
 
 interface ArticleViewSwitcherProps {
     className?: string;

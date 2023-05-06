@@ -1,11 +1,8 @@
 import { getArticleDetailsData } from './model/selectors/articleDetails.selectors';
 import ArticleDetails from './ui/ArticleDetails/ArticleDetails';
 import ArticleList from './ui/ArticleList/ArticleList';
-import ArticleTypesTabs from './ui/ArticleTypesTabs/ArticleTypesTabs';
-import ArticleViewSwitcher from './ui/ArticleViewSwitcher/ArticleViewSwitcher';
 
-export { default as ArticleSortSelector } from './ui/ArticleSortSelector/ArticleSortSelector';
-export { ArticleDetails, ArticleList, ArticleViewSwitcher, ArticleTypesTabs };
+export { ArticleDetails, ArticleList };
 export { getArticleDetailsData };
 export { type ArticleDetailsSchema } from './model/types/articleDetailsSchema';
 export {
