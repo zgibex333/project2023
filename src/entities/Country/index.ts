@@ -1,4 +1,2 @@
-import CountrySelect from './ui/CountrySelect/CountrySelect';
-
 export { Country } from './model/types/country';
-export { CountrySelect };
+export { default as CountrySelect } from './ui/CountrySelect/CountrySelect';

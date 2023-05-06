@@ -25,6 +25,7 @@ module.exports = {
         'prettier',
         'react-hooks',
         'zgibex-plugin',
+        'unused-imports',
     ],
     rules: {
         'prettier/prettier': ['error'],
@@ -107,6 +108,7 @@ module.exports = {
                 custom: 'ignore',
             },
         ],
+        'unused-imports/no-unused-imports': 'error',
     },
     globals: {
         __IS_DEV__: true,

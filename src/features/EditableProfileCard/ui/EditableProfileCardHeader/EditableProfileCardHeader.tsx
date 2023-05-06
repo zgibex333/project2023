@@ -11,7 +11,6 @@ import { getProfileData } from '../../model/selectors/getProfileData/getProfileD
 import { getProfileReadonly } from '../../model/selectors/getProfileReadonly/getProfileReadonly';
 import { updateProfileData } from '../../model/services/updateProfileData/updateProfileData';
 import { profileActions } from '../../model/slice/profileSlice';
-import cls from './EditableProfileCardHeader.module.scss';
 
 interface EditableProfileCardHeaderProps {
     className?: string;

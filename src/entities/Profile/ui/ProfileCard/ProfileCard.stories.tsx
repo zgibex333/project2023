@@ -1,9 +1,7 @@
 import React from 'react';
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { ThemeDecorator } from '@/shared/config/storybook/ThemeDecorator/ThemeDecorator';
 import { Country } from '@/entities/Country';
 import { Currency } from '@/entities/Currency';
-import Avatar from '@/shared/assets/tests/avatar-test.jpg';
 import ProfileCard from './ProfileCard';
 // More on default export: https://storybook.js.org/docs/react/writing-stories/introduction#default-export
 export default {
