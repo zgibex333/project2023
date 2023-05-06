@@ -11,15 +11,28 @@ export enum AppRoutes {
     FORBIDDEN = 'forbidden',
 }
 
+export const getRouteMain = () => '/';
+export const getRouteAbout = () => '/about';
+export const getRouteProfile = (profileId: string) => `/profile/${profileId}`;
+export const getRouteArticleDetails = (articleId: string) =>
+    `/article/${articleId}`;
+export const getRouteArticles = () => '/articles';
+export const getRouteArticleCreate = () => '/articles/new';
+export const getRouteArticleEdit = (articleId: string) =>
+    `/articles/${articleId}/edit`;
+export const getRouteAdminPanel = () => '/admin';
+export const getRouteForbidden = () => '/forbidden';
+export const getRouteNotFound = () => '*';
+
 export const RoutePath: Record<AppRoutes, string> = {
-    [AppRoutes.MAIN]: '/',
-    [AppRoutes.ABOUT]: '/about',
-    [AppRoutes.PROFILE]: '/profile/',
-    [AppRoutes.ARTICLES]: '/articles',
-    [AppRoutes.ARTICLE_DETAILS]: '/articles/',
-    [AppRoutes.ARTICLE_CREATE]: '/articles/new',
-    [AppRoutes.ARTICLE_EDIT]: '/articles/:id/edit',
-    [AppRoutes.ADMIN_PANEL]: '/admin',
-    [AppRoutes.FORBIDDEN]: '/forbidden',
-    [AppRoutes.NOT_FOUND]: '*',
+    [AppRoutes.MAIN]: getRouteMain(),
+    [AppRoutes.ABOUT]: getRouteAbout(),
+    [AppRoutes.PROFILE]: getRouteProfile(':id'),
+    [AppRoutes.ARTICLES]: getRouteArticles(),
+    [AppRoutes.ARTICLE_DETAILS]: getRouteArticleDetails(':id'),
+    [AppRoutes.ARTICLE_CREATE]: getRouteArticleCreate(),
+    [AppRoutes.ARTICLE_EDIT]: getRouteArticleEdit(':id'),
+    [AppRoutes.ADMIN_PANEL]: getRouteAdminPanel(),
+    [AppRoutes.FORBIDDEN]: getRouteForbidden(),
+    [AppRoutes.NOT_FOUND]: getRouteNotFound(),
 };

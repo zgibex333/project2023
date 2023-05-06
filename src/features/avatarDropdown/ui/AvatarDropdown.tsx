@@ -7,11 +7,11 @@ import {
     isUserManager,
     userActions,
 } from '@/entities/User';
-import { RoutePath } from '@/shared/const/routes';
 import { classNames } from '@/shared/lib/classNames/classNames';
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Avatar } from '@/shared/ui/Avatar';
 import { Dropdown } from '@/shared/ui/Popups';
+import { getRouteAdminPanel, getRouteProfile } from '@/shared/const/routes';
 
 interface AvatarDropdownProps {
     className?: string;
@@ -43,13 +43,13 @@ const AvatarDropdown = memo((props: AvatarDropdownProps) => {
                         ? [
                               {
                                   content: t('Админка'),
-                                  href: RoutePath.admin_panel,
+                                  href: getRouteAdminPanel(),
                               },
                           ]
                         : []),
                     {
                         content: t('Профиль'),
-                        href: RoutePath.profile + authData.id,
+                        href: getRouteProfile(authData.id),
                     },
                     {
                         content: t('Выйти'),
