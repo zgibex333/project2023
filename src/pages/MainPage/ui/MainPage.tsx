@@ -10,7 +10,7 @@ const MainPage: FC = memo(() => {
         setValue(value);
     };
 
-    return <Page>{t('Главная страница')}</Page>;
+    return <Page data-testid="MainPage">{t('Главная страница')}</Page>;
 });
 
 export default MainPage;
