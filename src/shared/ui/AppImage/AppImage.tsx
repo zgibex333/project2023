@@ -5,6 +5,7 @@ import {
     useLayoutEffect,
     useState,
 } from 'react';
+import FallbackErrorImage from '../../assets/img/image-fallback.png';
 
 interface AppImageProps extends ImgHTMLAttributes<HTMLImageElement> {
     className?: string;
@@ -42,6 +43,10 @@ const AppImage = memo((props: AppImageProps) => {
 
     if (hasError && errorFallback) {
         return errorFallback;
+    }
+
+    if (hasError && !errorFallback) {
+        return <img className={className} src={FallbackErrorImage} alt={alt} />;
     }
 
     return <img className={className} src={src} alt={alt} {...otherProps} />;

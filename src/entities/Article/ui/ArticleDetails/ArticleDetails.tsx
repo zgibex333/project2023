@@ -8,7 +8,6 @@ import DynamicModuleLoader, {
 import { useAppDispatch } from '@/shared/lib/hooks/useAppDispatch/useAppDispatch';
 import { Text, TextAlign, TextSize } from '@/shared/ui/Text';
 import { Skeleton } from '@/shared/ui/Skeleton';
-import { Avatar } from '@/shared/ui/Avatar';
 import ViewIcon from '@/shared/assets/icons/eye-icon.svg';
 import CalendarIcon from '@/shared/assets/icons/calendar-icon.svg';
 import { HStack, VStack } from '@/shared/ui/Stack';
@@ -26,6 +25,7 @@ import ArticleImageBlockComponent from '../ArticleImageBlockComponent/ArticleIma
 import ArticleTextBlockComponent from '../ArticleTextBlockComponent/ArticleTextBlockComponent';
 import { ArticleBlockType } from '../../model/consts/consts';
 import cls from './ArticleDetails.module.scss';
+import { AppImage } from '@/shared/ui/AppImage';
 
 interface ArticleDetailsProps {
     className?: string;
@@ -113,8 +113,15 @@ const ArticleDetails = memo((props: ArticleDetailsProps) => {
         content = (
             <>
                 <HStack justify="center" max className={cls.avatarWrapper}>
-                    <Avatar
-                        size={200}
+                    <AppImage
+                        fallback={
+                            <Skeleton
+                                className={cls.avatar}
+                                width={200}
+                                height={200}
+                                border="50%"
+                            />
+                        }
                         src={article.img}
                         className={cls.avatar}
                     />
