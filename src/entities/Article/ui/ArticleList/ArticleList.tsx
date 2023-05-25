@@ -62,6 +62,7 @@ const ArticleList = memo((props: ArticleListProps) => {
     return (
         // @ts-ignore
         <div
+            data-testid="ArticleList"
             className={classNames(cls.ArticleList, {}, [className, cls[view]])}
         >
             {articles.map((article) => (

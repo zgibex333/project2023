@@ -1,1 +1,1 @@
-export default (testId: string) => `[data-testid=${testId}]`;
+export default (testId: string) => `[data-testid="${testId}"]`;
