@@ -3094,6 +3094,84 @@
       ],
       "blocks": [],
       "id": "Qiq4LuD"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.04.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "Agb6MxN"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.04.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "u3S_cHq"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.04.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "eXwBjeP"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.04.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "Z11nF44"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.04.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "gwksJLm"
+    },
+    {
+      "title": "TESTING ARTICLE",
+      "subtitle": "Что нового в JS за 2022 год?",
+      "img": "https://teknotower.com/wp-content/uploads/2020/11/js.png",
+      "views": 1022,
+      "createdAt": "26.04.2022",
+      "userId": "1",
+      "type": [
+        "IT"
+      ],
+      "blocks": [],
+      "id": "_O_-eTi"
     }
   ],
   "comments": [
@@ -3270,6 +3348,12 @@
       "userId": "4",
       "text": "text",
       "id": "kHdECI2"
+    },
+    {
+      "articleId": "eXwBjeP",
+      "userId": "4",
+      "text": "text",
+      "id": "m7l1fqA"
     }
   ],
   "users": [

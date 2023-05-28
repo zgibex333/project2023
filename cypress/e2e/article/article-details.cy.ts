@@ -9,9 +9,11 @@ describe('Пользователь заходит на страницу стат
             cy.log(currentArticleId, 'CURRENT');
             cy.visit(`article/${currentArticleId}`);
         });
+        cy.log('before', currentArticleId);
     });
 
     afterEach(() => {
+        cy.log('after', currentArticleId);
         cy.getAllComments(currentArticleId).then((data) => {
             // eslint-disable-next-line no-restricted-syntax
             for (const comment of data) {
@@ -43,6 +45,15 @@ describe('Пользователь заходит на страницу стат
         cy.getByTestId('CommentCard.Loading').should('not.exist');
     });
     it('И ставит оценку', () => {
+        cy.getByTestId('ArticleDetails.Info').should('exist');
+        cy.getByTestId('RatingCard').scrollIntoView();
+        cy.setRate('feedback', 5);
+        cy.get('[data-selected=true]').should('have.length', 5);
+    });
+    it('И ставит оценку (пример с стабом на фикстурах)', () => {
+        cy.intercept('GET', '**/articles/*', {
+            fixture: 'article-details.json',
+        });
         cy.getByTestId('ArticleDetails.Info').should('exist');
         cy.getByTestId('RatingCard').scrollIntoView();
         cy.setRate('feedback', 5);
