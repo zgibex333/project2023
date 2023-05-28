@@ -5,6 +5,11 @@ import { I18nextProvider } from 'react-i18next';
 import { MemoryRouter } from 'react-router-dom';
 import { StateSchema, StoreProvider } from '@/app/providers/storeProvider';
 import i18nForTests from '@/shared/config/i18n/i18nForTest';
+// eslint-disable-next-line zgibex-plugin/layers-imports
+import { ThemeProvider } from '@/app/providers/ThemeProvider';
+// eslint-disable-next-line zgibex-plugin/layers-imports
+import '@/app/styles/index.scss';
+import { Theme } from '@/shared/const/Theme';
 
 export interface componentRenderOptions {
     route?: string;
@@ -12,21 +17,34 @@ export interface componentRenderOptions {
     asyncReducers?: DeepPartial<ReducersMapObject<StateSchema>>;
 }
 
-export function componentRender(
-    component: ReactNode,
-    options: componentRenderOptions = {},
-) {
+interface TestProviderProps {
+    children: ReactNode;
+    options?: componentRenderOptions;
+    theme?: Theme;
+}
+
+export function TestProvider(props: TestProviderProps) {
+    const { children, options = {}, theme = Theme.LIGHT } = props;
     const { route = '/', initialState, asyncReducers } = options;
-    return render(
+    return (
         <MemoryRouter initialEntries={[route]}>
             <StoreProvider
                 asyncReducers={asyncReducers}
                 initialState={initialState}
             >
                 <I18nextProvider i18n={i18nForTests}>
-                    {component}
+                    <ThemeProvider initialTheme={theme}>
+                        <div className={`app ${theme}`}>{children}</div>
+                    </ThemeProvider>
                 </I18nextProvider>
             </StoreProvider>
-        </MemoryRouter>,
+        </MemoryRouter>
     );
+}
+
+export function componentRender(
+    component: ReactNode,
+    options: componentRenderOptions = {},
+) {
+    return render(<TestProvider options={options}>{component}</TestProvider>);
 }
